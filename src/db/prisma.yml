@@ -1,0 +1,15 @@
+# HTTP endpoint
+#endpoint: ''
+endpoint: https://us1.prisma.sh/brent-soles/hackernews-clone-node/dev
+
+# Points to file that holds data model
+# Possible to have multiple??
+datamodel: datamodel.graphql
+
+#hooks
+hooks:
+  post-deploy:
+    - graphql get-schema --project database # points to project, not path
+
+#secretKey, shhhhhhh....
+secret: secret123
